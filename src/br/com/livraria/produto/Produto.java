@@ -13,6 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Produto {
 private String nome;
-private String idProduto;
+private Integer idProduto;
 private double preco;
 }
