@@ -1,4 +1,4 @@
-package br.com.livraria.produto;
+package br.com.livraria.administrativo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,9 +11,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Produto {
+public class Comprador {
 private String nome;
-private Integer idProduto;
-private double preco;
-private Boolean destinadoParaAdulto;
+private Integer idade;
+private String rg;
+private String cpf;
+
 }

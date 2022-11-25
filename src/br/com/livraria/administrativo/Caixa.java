@@ -12,15 +12,19 @@ public class Caixa {
 		livro.setIdProduto(1);
 		livro.setNome("codigoLimpo");
 		livro.setGeneros("informatica");
+		livro.setDestinadoParaAdulto(false);
 		estoqueList.insereProduto(livro);
 
 	}
 
-	public void comprar(Integer idProduto, double preco) {
+	public void comprar(Integer idProduto, double preco, Comprador comprador) {
 		Produto produtotemporario = estoqueList.getProdutoPorId(idProduto);
 		if (produtotemporario.getPreco() <= preco) {
-			estoqueList.removeProduto(produtotemporario);
-			Dinheiro = Dinheiro + produtotemporario.getPreco();
+			if (comprador.getIdade() >= 18 || produtotemporario.getDestinadoParaAdulto() == false) {
+
+				estoqueList.removeProduto(produtotemporario);
+				Dinheiro = Dinheiro + produtotemporario.getPreco();
+			}
 		}
 
 	}
